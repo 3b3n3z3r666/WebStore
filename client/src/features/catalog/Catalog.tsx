@@ -29,7 +29,7 @@ export default function Catalog(){
 
     useEffect( () => {
         if (!filtersLoaded) dispatch(fetchFilters());
-    },[dispatch, filtersLoaded])
+    }, [dispatch, filtersLoaded])
 
 
     if(!filtersLoaded) return <LoadingComponent message="Loading products... "/>
