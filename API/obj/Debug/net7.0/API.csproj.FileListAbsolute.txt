@@ -80,3 +80,16 @@
 /Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
 /Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/Microsoft.Win32.SystemEvents.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/Stripe.net.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/System.Configuration.ConfigurationManager.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/System.Drawing.Common.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/System.Security.Cryptography.ProtectedData.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/System.Security.Permissions.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/System.Windows.Extensions.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
+/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
