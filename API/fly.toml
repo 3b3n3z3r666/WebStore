@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for webstore on 2023-11-29T17:22:49-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "webstore"
+primary_region = "ewr"
+
+[build]
+  image = "nickfraser40/webstore:latest"
+
+[env]
+  ASPNETCORE_URLS="https://+:8080"
+  StripeSettings__PublishableKey="pk_test_51ODBo1FwlogWasXXCKia1zm8yAdXh8Qu8mxhfFpowbKs3nIpnbUHxSb5qeMIRtRgRaxpAlDKGPJBENx9wjUUBOiU00gv7xToPC"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 1024
