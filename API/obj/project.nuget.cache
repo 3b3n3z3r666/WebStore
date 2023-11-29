@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5moc136LkOw7Vi4+tR3592HI4z5UNMudSy2k2eyZprUu8vrwwvck8NwD2XUYzwFcnS9HDSHvqFbS0EEp+UmRnA==",
+  "dgSpecHash": "o0Pp6LOUZ7pqOm85hcjuKQ/tfxzWwK5o6fK1177qoDqLETDnFzyvzqj4sItpCGkiGEKqJ9AalJX2gxOOFu/Cvw==",
   "success": true,
   "projectFilePath": "/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/API.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,8 @@
     "/Users/nick_fraser/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/nick_fraser/.nuget/packages/npgsql/7.0.0/npgsql.7.0.0.nupkg.sha512",
+    "/Users/nick_fraser/.nuget/packages/npgsql.entityframeworkcore.postgresql/7.0.0/npgsql.entityframeworkcore.postgresql.7.0.0.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.4/sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/sqlitepclraw.core/2.1.4/sqlitepclraw.core.2.1.4.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.4/sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",
@@ -55,6 +57,7 @@
     "/Users/nick_fraser/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/system.identitymodel.tokens.jwt/6.15.1/system.identitymodel.tokens.jwt.6.15.1.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
+    "/Users/nick_fraser/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/system.security.accesscontrol/6.0.0/system.security.accesscontrol.6.0.0.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/system.security.cryptography.protecteddata/6.0.0/system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",

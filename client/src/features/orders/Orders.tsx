@@ -2,11 +2,8 @@ import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, 
 import agent from "../../app/api/agent";
 import { useEffect, useState } from "react";
 import LoadingComponent from "../../app/layout/LoadingComponent";
-import { Order, OrderItem } from "../../app/models/order";
+import { Order } from "../../app/models/order";
 import { currencyFormat } from "../../app/util/util";
-import { number } from "yup";
-import BasketTable from "../basket/BasketTable";
-import { BasketItem } from "../../app/models/basket";
 import OrderDetails from "./OrderDetails";
 
 export default function Orders() {
@@ -30,10 +27,10 @@ export default function Orders() {
     if (loading) return (< LoadingComponent message="Loading Orders..." />);
 
 
-    if (selectedOrderNumber > 0)
+    if (selectedOrderNumber > 0 && orders)
         return (
             <OrderDetails
-                order={orders?.find(order => order.id === selectedOrderNumber)!}
+                order={orders.find(order => order.id === selectedOrderNumber)!}
                 setSelectedOrderNumber={setSelectedOrderNumber}
             />
         )

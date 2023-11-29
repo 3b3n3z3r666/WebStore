@@ -30,13 +30,13 @@ const navStyles = {
 }
 
 export default function Header({darkMode, handleThemeChange} : Props){
-    var darkModeText = darkMode ? "DARK MODE": "LIGHT MODE"
+    const darkModeText = darkMode ? "DARK MODE": "LIGHT MODE"
     const {basket} = useAppSelector(state => state.basket);
     const {user} = useAppSelector(state => state.account)
     
     const itemCount = basket?.items.reduce((sum, item) => sum + item.quantity, 0)
     return(
-        <AppBar position="static" sx={{mb: 4}}>
+        <AppBar position="static" sx={{}}>
             <Toolbar sx={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
 
                 <Box display='flex' alignItems='center'> 
