@@ -27,6 +27,9 @@ namespace API.Controllers
             _userManager = userManager;
         }
 
+
+
+
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
@@ -38,50 +41,40 @@ namespace API.Controllers
             var anonBasket = await RetrieveBasket(Request.Cookies["buyerId"]);
             BasketDto returnBasket;
 
-            if ((anonBasket == null || anonBasket.Items.Count < 1) && userBasket != null)
+            //items in anon shopper basket
+            if (anonBasket != null)
             {
-                //logged out shopper has nothing in cart
-                //logging in should get the user basket
-                Console.WriteLine("\n\n\n\nAnon basket is empty at login\n\n\n\n");
-                Console.WriteLine("\n\n\n\n User Basket is not empty - Will fetch user basket \n\n\n\n");
-                Response.Cookies.Delete("buyerId");
-                returnBasket = userBasket.MapBasketToDto();
-                await _context.SaveChangesAsync();
-            }
-            else if (anonBasket?.Items?.Count > 0 && userBasket?.Items?.Count > 0)
-            {
-                //logged out shopper has items in cart and has a user cart
-                Console.WriteLine("\n\n\n\nUser and Anon have baskets at login\n\n\n\n");
-                Response.Cookies.Delete("buyerId");
-                foreach (var anonItem in anonBasket.Items)
+                //items saved in user's basket
+                if (userBasket != null)
                 {
-                    userBasket.AddItem(anonItem.Product, anonItem.Quantity);
+                    //add anon items to userbasket
+                    foreach (var anonItem in anonBasket.Items)
+                    {
+                        Console.WriteLine("\n\n\nAdding anonItems to userBasket\n\n\n");
+                        userBasket.AddItem(anonItem.Product, anonItem.Quantity);
+                        await _context.SaveChangesAsync();
+                    }
+                    returnBasket = userBasket?.MapBasketToDto();
+
+                }
+                //userbasket is null so transfer anon basket to user
+                else
+                {
+                    Console.WriteLine("\n\n\n Transfering anonBasket to user\n\n\n");
+                    returnBasket = anonBasket.MapBasketToDto();
+                    // _context.Baskets.Remove(userBasket);
+                    anonBasket.BuyerId = user.UserName;
+                    Response.Cookies.Delete("buyerId");
                     await _context.SaveChangesAsync();
                 }
-                returnBasket = userBasket.MapBasketToDto();
+
             }
+            //anonbasket and user basket are both empty to return empty basket
             else
             {
-                // logged out shopper has no user basket
-                Console.WriteLine("\n\n\n\nNo user basket at login\n\n\n\n");
-
-                if (_context.Baskets.Any())
-                {
-                    Console.WriteLine("\n\n\nThere are baskets\n\n\n");
-                    // _context.Baskets.Remove(userBasket);
-                }
-                Console.WriteLine($"loginDto.Username is {loginDto.Username}");
-                // anonBasket.BuyerId = loginDto.Username;
-                // Response.Cookies.Delete("buyerId");
-                // returnBasket = anonBasket.MapBasketToDto();
-                // Console.WriteLine($"Return Basket is {returnBasket}");
+                returnBasket = anonBasket?.MapBasketToDto();
                 await _context.SaveChangesAsync();
-                return new UserDto
-                {
-                    Email = user.Email,
-                    Token = await _tokenService.GenerateToken(user),
-                    Basket = anonBasket?.MapBasketToDto()
-                };
+
             }
 
             return new UserDto
@@ -91,6 +84,8 @@ namespace API.Controllers
                 Basket = returnBasket
             };
         }
+
+
 
         [HttpPost("register")]
         public async Task<ActionResult> Register(RegisterDto registerDto)
@@ -111,6 +106,11 @@ namespace API.Controllers
 
             return StatusCode(201);
         }
+
+
+
+
+
         [Authorize]
         [HttpGet("currentUser")]
         public async Task<ActionResult<UserDto>> GetCurrentUser()
@@ -142,14 +142,31 @@ namespace API.Controllers
 
         private async Task<Basket> RetrieveBasket(string buyerId)
         {
+            Console.WriteLine("\n\n\nAccountController RetrieveBasket Method\n\n\n");
             if (string.IsNullOrEmpty(buyerId))
             {
+                Console.WriteLine("\n\n\nAccountController retrieveBasket - Deleting buyerId cookie from response\n\n\n");
+
                 Response.Cookies.Delete("buyerId");
+                return null;
             }
             return await _context.Baskets
                 .Include(i => i.Items)
                 .ThenInclude(p => p.Product)
                 .FirstOrDefaultAsync(x => x.BuyerId == buyerId);
+        }
+
+
+        public async Task<BasketDto> AddAnonItemsToUserBasket(LoginDto loginDto)
+        {
+            var anonBasket = await RetrieveBasket(Request.Cookies["buyerId"]);
+            var userBasket = await RetrieveBasket(loginDto.Username);
+            foreach (var anonItem in anonBasket.Items)
+            {
+                userBasket.AddItem(anonItem.Product, anonItem.Quantity);
+                await _context.SaveChangesAsync();
+            }
+            return userBasket.MapBasketToDto();
         }
     }
 }

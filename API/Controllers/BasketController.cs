@@ -67,13 +67,15 @@ namespace API.Controllers
 
         private async Task<Basket> RetrieveBasket(string buyerId)
         {
-            Console.WriteLine($"\n\n\nRetrieving basket - Buyer ID is: {buyerId}\n\n\n");
-            Console.WriteLine($"\n\n\nGetBuyerId() is: {GetBuyerId()}\n\n\n");
+            Console.WriteLine($"\n\n\nBasketController Retrieve basket method\n\n\n");
+            // Console.WriteLine($"\n\n\nGetBuyerId() is: {GetBuyerId()}\n\n\n");
             if (string.IsNullOrEmpty(buyerId))
             {
                 Response.Cookies.Delete("buyerId");
                 Console.WriteLine($"\n\n\nBuyer ID is empty! buyerId cookie will be deleted!\n\n\n");
+                return null;
             }
+            Console.WriteLine($"\n\n\nThere is a buyer id: {buyerId}\n\n\nPerforming query on baskets with buyer id {buyerId}\n\n\n");
             return await _context.Baskets
                 .Include(i => i.Items)
                 .ThenInclude(p => p.Product)
@@ -82,8 +84,22 @@ namespace API.Controllers
 
         private string GetBuyerId()
         {
+            Console.WriteLine("\n\n\nGetting Buyer ID!\n\n\n");
 
-            return User.Identity?.Name ?? Request.Cookies["buyerId"];
+            if(!string.IsNullOrEmpty(User.Identity.Name))
+            {
+                var cookie = Request.Cookies["buyerId"];
+                // Console.WriteLine($"\n\n\n Identity UserName is : {User.Identity.Name} - Deleting the cookie: {cookie}");
+                
+                // Response.Cookies.Delete("buyerId");
+                return User.Identity.Name;
+            }
+            else
+            {
+                return Request.Cookies["buyerId"];
+            }
+
+            // return User.Identity?.Name ?? Request.Cookies["buyerId"];
         }
 
         private Basket CreateBasket()
