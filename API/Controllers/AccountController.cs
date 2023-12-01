@@ -54,7 +54,7 @@ namespace API.Controllers
                         userBasket.AddItem(anonItem.Product, anonItem.Quantity);
                         await _context.SaveChangesAsync();
                     }
-                    returnBasket = userBasket?.MapBasketToDto();
+                    returnBasket = userBasket.MapBasketToDto();
 
                 }
                 //userbasket is null so transfer anon basket to user
@@ -72,7 +72,7 @@ namespace API.Controllers
             //anonbasket and user basket are both empty to return empty basket
             else
             {
-                returnBasket = anonBasket?.MapBasketToDto();
+                returnBasket = anonBasket.MapBasketToDto();
                 await _context.SaveChangesAsync();
 
             }
