@@ -10,6 +10,7 @@ interface StoreContextValue {
 
 export const StoreContext = createContext<StoreContextValue | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useStoreContext(){
     const context = useContext(StoreContext);
 

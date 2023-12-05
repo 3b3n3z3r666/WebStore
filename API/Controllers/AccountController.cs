@@ -72,7 +72,7 @@ namespace API.Controllers
             //anonbasket and user basket are both empty to return empty basket
             else
             {
-                returnBasket = anonBasket.MapBasketToDto();
+                returnBasket = anonBasket?.MapBasketToDto();
                 await _context.SaveChangesAsync();
 
             }

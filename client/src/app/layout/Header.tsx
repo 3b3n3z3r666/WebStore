@@ -30,7 +30,7 @@ const navStyles = {
 }
 
 export default function Header({darkMode, handleThemeChange} : Props){
-    var darkModeText = darkMode ? "DARK MODE": "LIGHT MODE"
+    const darkModeText = darkMode ? "DARK MODE": "LIGHT MODE"
     const {basket} = useAppSelector(state => state.basket);
     const {user} = useAppSelector(state => state.account)
     
