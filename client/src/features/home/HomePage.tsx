@@ -8,27 +8,49 @@ export default function HomePage() {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        display: "block",
+        marginLeft: "auto",
+        marginRight: "auto",
+        paddingTop: 60
+        // display: "flex"
     };
 
     return (
-        <>
+        <div style={{ marginTop: 40 }}>
+            {/* <div style={{display:"block",justifyContent:"center"}}> */}
             <Slider {...settings} >
                 <div>
-                    <img src="/images/hero1.jpg" alt="hero1" style={{ display: "block", width: "100%", maxHeight: 500 }} />
+                    <img src="/images/WebStore/1.jpg" alt="logo1"
+                        style={{
+                            display: "block", borderRadius: 50,
+                            width: "25%", height: "100%", maxHeight: 500,
+                            marginLeft: "auto", marginRight: "auto"
+                        }} />
                 </div>
                 <div>
-                    <img src="/images/hero2.jpg" alt="hero2" style={{ display: "block", width: "100%", maxHeight: 500 }} />
+                    <img src="/images/WebStore/2.jpg" alt="logo2"
+                        style={{
+                            display: "block", borderRadius: 50,
+                            width: "25%", height: "100%", maxHeight: 500,
+                            marginLeft: "auto", marginRight: "auto"
+                        }} />
                 </div>
                 <div>
-                    <img src="/images/hero3.jpg" alt="hero3" style={{ display: "block", width: "100%", maxHeight: 500 }} />
+                    <img src="/images/WebStore/3.jpg" alt="logo3"
+                        style={{
+                            display: "block", borderRadius: 50,
+                            width: "25%", height: "100%", maxHeight: 500,
+                            marginLeft: "auto", marginRight: "auto"
+                        }} />
                 </div>
             </Slider>
+            {/* </div> */}
             <Box display="flex" justifyContent="center" sx={{ p: 4 }}>
                 <Typography variant="h1">
                     Welcome to WebStore!
                 </Typography>
             </Box>
-        </>
+        </div>
     )
 }
