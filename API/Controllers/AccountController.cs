@@ -52,6 +52,7 @@ namespace API.Controllers
                     {
                         Console.WriteLine("\n\n\nAdding anonItems to userBasket\n\n\n");
                         userBasket.AddItem(anonItem.Product, anonItem.Quantity);
+                        Response.Cookies.Delete("buyerId");
                         await _context.SaveChangesAsync();
                     }
                     returnBasket = userBasket.MapBasketToDto();
