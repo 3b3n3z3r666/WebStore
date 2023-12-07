@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5moc136LkOw7Vi4+tR3592HI4z5UNMudSy2k2eyZprUu8vrwwvck8NwD2XUYzwFcnS9HDSHvqFbS0EEp+UmRnA==",
+  "dgSpecHash": "w9gQDHBF/cQD+OjyKsFdrOW9Si3ohdKfpHXvUAmzHCq03KJtTDhka7A+QQks9nVbe7AcngzM8bJwbqlhW/lGHg==",
   "success": true,
   "projectFilePath": "/Volumes/Glyph 1TB/dotNET-Projects/dotnetReactProjects/WebStore/API/API.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,8 @@
     "/Users/nick_fraser/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/nick_fraser/.nuget/packages/npgsql/7.0.1/npgsql.7.0.1.nupkg.sha512",
+    "/Users/nick_fraser/.nuget/packages/npgsql.entityframeworkcore.postgresql/7.0.1/npgsql.entityframeworkcore.postgresql.7.0.1.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.4/sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/sqlitepclraw.core/2.1.4/sqlitepclraw.core.2.1.4.nupkg.sha512",
     "/Users/nick_fraser/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.4/sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",
