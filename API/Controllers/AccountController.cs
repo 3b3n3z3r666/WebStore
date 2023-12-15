@@ -158,16 +158,16 @@ namespace API.Controllers
         }
 
 
-        public async Task<BasketDto> AddAnonItemsToUserBasket(LoginDto loginDto)
-        {
-            var anonBasket = await RetrieveBasket(Request.Cookies["buyerId"]);
-            var userBasket = await RetrieveBasket(loginDto.Username);
-            foreach (var anonItem in anonBasket.Items)
-            {
-                userBasket.AddItem(anonItem.Product, anonItem.Quantity);
-                await _context.SaveChangesAsync();
-            }
-            return userBasket.MapBasketToDto();
-        }
+        // public async Task<BasketDto> AddAnonItemsToUserBasket(LoginDto loginDto)
+        // {
+        //     var anonBasket = await RetrieveBasket(Request.Cookies["buyerId"]);
+        //     var userBasket = await RetrieveBasket(loginDto.Username);
+        //     foreach (var anonItem in anonBasket.Items)
+        //     {
+        //         userBasket.AddItem(anonItem.Product, anonItem.Quantity);
+        //         await _context.SaveChangesAsync();
+        //     }
+        //     return userBasket.MapBasketToDto();
+        // }
     }
 }

@@ -13,7 +13,6 @@ namespace API.Extensions
         public static BasketDto MapBasketToDto(this Basket basket)
         {
             Console.WriteLine("MapBasketToDto\n\n\n");
-            BasketItemDto basketItems;
             return new BasketDto
             {
                 Id = basket.Id,
